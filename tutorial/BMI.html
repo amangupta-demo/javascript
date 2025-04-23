@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>hello calculate your bmi Now</h1>
+    <div>
+        <label for="">height</label>
+        <input type="text" name="" id="height" placeholder="height in meter" >
+        <label for="">weight</label>
+        <input type="text" name="" id="weight" placeholder="weight in kilogarm">
+        
+        <button id="button">Calculate</button>
+        <br>
+        <div>your bmi is : <span id="result"></span></div>
+    </div>
+
+</body>
+<script>
+  let btn = document.querySelector('#button');
+
+    btn.addEventListener( 'click',(e)=>{
+    let hei = parseInt(document.querySelector('#height').value);
+    let wei = parseInt(document.querySelector('#weight').value);
+    let result  = wei / (hei*hei);
+    document.querySelector('#result').innerText  = result;
+
+    
+    },false )
+
+</script>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{margin: 0;padding: 0;box-sizing: border-box;text-align: center;}
+    body{
+        margin-top: 50px;
+    }
+    #main{
+        margin: 50px;
+        padding: 10px 0px;
+        /* border:2px solid red; */
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .box{
+        width: 200px;
+        height: 200px;
+        border:1px solid black ;
+    }
+    #gray{
+        background-color: gray;
+    }
+    #red{
+        background-color: red;
+    }
+    #blue{
+        background-color: blue;
+    }
+    #yellow{
+        background-color: yellow;
+    }
+</style>
+</head>
+<body>
+    <h1>Color Scheme Switcher</h1>
+
+    <div id="main">
+        <div class="box" id="gray" ></div>
+        <div class="box" id="red" ></div>
+        <div class="box" id="blue" ></div>
+        <div class="box" id="yellow" ></div>
+    </div>
+<h2>
+    Try clicking on one of the colors above to change the background color of this page !
+</h2>
+</body>
+
+<script>
+    let body = document.querySelector("body");
+    let main = document.getElementById("main")
+
+    main.addEventListener('click', (e)=>{
+        if(e.target.className === 'box'){
+console.log(e.target)
+            body.style.backgroundColor=e.target.id;
+        }
+    },false);
+
+</script>
+
+</html>
