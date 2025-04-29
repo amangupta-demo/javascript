@@ -1,2 +1,2 @@
 # javascript
-for java script tutorial
+ java script tutorial
