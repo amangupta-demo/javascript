@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <span id ='min'></span>
+        <span> : </span>
+        <span id="sec"></span>
+        <span> : </span>
+        <span id="ms"></span>
+        
+    </div>
+    <button id="start">
+        Start 
+    </button>
+    <button id="stop">
+        Stop
+    </button>
+    <button id="restart">
+        Restart
+    </button>
+</body>
+<script>
+
+let min = document.querySelector('#min');
+let sec = document.querySelector('#sec');
+let ms = document.querySelector('#ms');
+
+min.innerText='00';
+sec.innerText='00';
+ms.innerText='00';
+
+var id = null
+
+
+
+
+document.querySelector("#start").addEventListener("click", () => {
+    id = setInterval(()=>{
+        date = new Date;
+        ms.innerText= date.getMilliseconds();
+        sec.innerText=date.getSeconds();
+        ms.innerText= date.getMinutes(); 
+    },1000)
+})
+
+document.querySelector("#stop").addEventListener("click", () => {
+    clearInterval(id);
+})
+
+document.querySelector("#restart").addEventListener("click",()=>{
+min.innerText='00';
+sec.innerText='00';
+ms.innerText='00';
+clearInterval(id)
+})
+
+
+</script>
+</html>

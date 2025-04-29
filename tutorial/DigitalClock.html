@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;text-align: center;
+        }
+        .DC{
+            font-size: 30px;
+        }
+        body{
+            width: 100wh;
+            height: 100vh;
+            
+        }
+        #clock{
+            /* margin-top: 50vh; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body style="text-align: center;">
+    <h2> Digital clock  </h2>
+
+    <div id="clock">
+        <div id="hours" class="DC">00</div>
+        <span class="DC">:</span>
+        <div id="minutes" class="DC">00</div>
+        <span class="DC">:</span>
+        <div id="second" class="DC">00</div>
+    </div>
+<button onclick="start()">Start</button>
+</body>
+<script>
+
+
+let hours = document.getElementById('hours');
+let minutes = document.getElementById('minutes');
+let second = document.getElementById('second');
+
+function start(){
+
+    setInterval(()=>{
+    const d = new Date();
+    let dhour = d.getHours();
+    let dminutes = d.getMinutes();
+    let dsecond = d.getSeconds();
+
+    
+    hours.innerText=dhour;
+    minutes.innerText=dminutes;
+    second.innerText = dsecond;
+
+},1000)
+
+}
+
+
+
+
+
+
+</script>
+</html>
